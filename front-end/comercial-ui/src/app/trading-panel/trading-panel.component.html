@@ -1,13 +1,18 @@
-<table>
-    <tr>
-        <th>Description</th>
-        <th>Porspectus</th>
-        <th>Value</th>
-    </tr>
+<p-table [value]="opportunities">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Description</th>
+            <th>Porspectus</th>
+            <th>Value</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-opportunity>
+        <tr>
+            <td>{{ opportunity.description }}</td>
+            <td>{{ opportunity.prospectusName }}</td>
+            <td>{{ opportunity.value }}</td>
+        </tr>
+    </ng-template>
+</p-table>
 
-    <tr *ngFor="let opportunity of opportunities">
-        <td>{{ opportunity.description }}</td>
-        <td>{{ opportunity.prospectusName }}</td>
-        <td>{{ opportunity.value }}</td>
-    </tr>
-</table>
+
