@@ -1,0 +1,18 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+
+@Injectable({
+  providedIn: 'root'
+})
+export class OpportunityService {
+
+  apiUrl = 'http://localhost:8080/opportunities';
+
+  constructor(private httpClient: HttpClient) { 
+
+  }
+
+  list() {
+    return this.httpClient.get(this.apiUrl);
+  }
+} 
