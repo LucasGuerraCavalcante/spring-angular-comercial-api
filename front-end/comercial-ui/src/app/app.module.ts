@@ -10,6 +10,7 @@ import { PanelModule } from "primeng/panel";
 import { InputTextModule } from "primeng/inputtext";
 import { ButtonModule } from "primeng/button";
 import { ToastModule } from "primeng/toast";
+import { MessageService } from 'primeng/api';
 
 import { AppComponent } from './app.component';
 import { TradingPanelComponent } from './trading-panel/trading-panel.component';
@@ -30,7 +31,7 @@ import { TradingPanelComponent } from './trading-panel/trading-panel.component';
     ButtonModule,
     ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
