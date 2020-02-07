@@ -8,6 +8,7 @@ import { OpportunityService } from '../opportunity.service';
 })
 export class TradingPanelComponent implements OnInit {
 
+  opportunity = {};
   opportunities = [];
 
   constructor(private opportutinyService: OpportunityService) { }

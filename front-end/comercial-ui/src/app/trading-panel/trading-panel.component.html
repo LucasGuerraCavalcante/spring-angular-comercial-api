@@ -1,3 +1,20 @@
+<p-panel header="New opportunity">
+    <div class="p-grid">
+        <div class="p-col-2">Description</div>
+        <div class="p-col-10">
+            <input pInputText type="text" [(ngModel)]="opportunity.description">
+        </div>
+        <div class="p-col-2">Prospectus Name</div>
+        <div class="p-col-10">
+            <input pInputText type="text" [(ngModel)]="opportunity.prospectusName">
+        </div>
+        <div class="p-col-2">Value</div>
+        <div class="p-col-10">
+            <input pInputText type="text" [(ngModel)]="opportunity.value">
+        </div>
+    </div>
+</p-panel>
+<br>
 <p-table [value]="opportunities">
     <ng-template pTemplate="header">
         <tr>
