@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -61,6 +62,27 @@ public class OpportunityController {
 		return opportunities.save(opportunity);
 	}
 	
+	/** @DeleteMapping("/{id}")
+	@ResponseStatus(HttpStatus.ACCEPTED)
+	public void deleteStudent(@PathVariable long id) {
+		opportunities.deleteById(id);
+	} */
+	
+	@DeleteMapping("/{id}")
+	@ResponseStatus(HttpStatus.ACCEPTED)
+	public void delete(@PathVariable Long id) {
+		Optional<Opportunity> opportunity = opportunities.findById(id);
+		
+		if (opportunity.isEmpty()) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+					"The Opportunity doesn't exist or was already deleted");
+		} else { 
+			
+			opportunities.deleteById(id);
+			
+		}
+		
+	}
 	
 	
 }
