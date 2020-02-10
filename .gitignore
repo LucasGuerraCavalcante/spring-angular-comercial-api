@@ -100,7 +100,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-
-browserlist
-=3.5
