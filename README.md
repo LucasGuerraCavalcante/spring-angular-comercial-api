@@ -22,4 +22,4 @@ Simple CRUD API with Java/SpringBoot, Angular 8 and MySQL
 ### On comercial-ui folder
 * npm install 
 * ng serve 
-* acess http://localhost:4200/
+* access http://localhost:4200/
