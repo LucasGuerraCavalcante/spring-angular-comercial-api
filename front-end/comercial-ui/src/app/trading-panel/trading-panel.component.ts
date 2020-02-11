@@ -50,4 +50,30 @@ export class TradingPanelComponent implements OnInit {
       });
   }
 
+  deleteOpp(index: any) {
+    // console.log(index)
+    this.opportutinyService.delete(index)
+      .subscribe(() => {
+        this.opportunity = {};
+        this.show();
+        this.messageService.add({
+          severity: 'success',
+          summary:  'The Opportunity was removed from the database'
+        })
+      },
+      errorResponse => {
+
+        let msg = 'Unexpected Error';
+
+        if(errorResponse.error.message) {
+          msg = errorResponse.error.message;
+        }
+
+        this.messageService.add({
+          severity: 'error',
+          summary:  msg
+        })
+      });
+  }
+
 }

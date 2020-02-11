@@ -28,11 +28,12 @@
             <th>Value</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-opportunity>
+    <ng-template pTemplate="body" let-opportunity let-i="index">
         <tr>
             <td>{{ opportunity.description }}</td>
             <td>{{ opportunity.prospectusName }}</td>
             <td>{{ opportunity.value }}</td>
+            <td><i (click)="deleteOpp(opportunity.id)" class="fa fa-trash"></i></td>
         </tr>
     </ng-template>
 </p-table>

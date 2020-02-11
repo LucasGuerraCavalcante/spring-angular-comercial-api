@@ -20,6 +20,8 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "angular-font-awesome": "^3.1.2",
+    "font-awesome": "^4.7.0",
     "karma-jasmine-html": "^1.0.0",
     "primeflex": "^1.0.0",
     "primeicons": "^2.0.0",

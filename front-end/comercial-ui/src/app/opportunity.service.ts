@@ -19,4 +19,8 @@ export class OpportunityService {
   add(opportunity: any) {
     return this.httpClient.post(this.apiUrl, opportunity);
   }
+
+  delete(index: any) {
+    return this.httpClient.delete(this.apiUrl + `/${ index }`);
+  }
 } 
