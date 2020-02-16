@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -62,11 +63,6 @@ public class OpportunityController {
 		return opportunities.save(opportunity);
 	}
 	
-	/** @DeleteMapping("/{id}")
-	@ResponseStatus(HttpStatus.ACCEPTED)
-	public void deleteStudent(@PathVariable long id) {
-		opportunities.deleteById(id);
-	} */
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
@@ -84,5 +80,24 @@ public class OpportunityController {
 		
 	}
 	
+	@PutMapping("/{id}")
+	@ResponseStatus(HttpStatus.OK)
+	public void put(@PathVariable Long id, @Valid @RequestBody Opportunity newOpportunity) {
+		Optional<Opportunity> oldOpportunity = opportunities.findById(id);
+		
+		if (oldOpportunity.isPresent()) {
+			Opportunity opportunity = oldOpportunity.get();
+        	opportunity.setProspectusName(newOpportunity.getProspectusName());
+        	opportunity.setDescription(newOpportunity.getDescription());
+        	opportunity.setValue(newOpportunity.getValue());
+        	opportunities.save(opportunity);
+		} else { 
+			
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+					"The Opportunity not found");
+			
+		}
+		
+	}
 	
 }
