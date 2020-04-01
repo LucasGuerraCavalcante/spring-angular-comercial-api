@@ -10,11 +10,6 @@ Simple CRUD API with Java/SpringBoot, Angular 8 and MySQL
 * Java
 * MySQL Server 
 
-#### Technologies used by me 
-* Postman 
-* SpringBoot Tools 
-* MySQL Workbench 
-
 ### On comercial-api folder
 * Set your MySQL credentials on application.properties in comercial-api/src/main/resources
 * Start Local Server 
